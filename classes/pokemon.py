@@ -12,7 +12,7 @@ class Pokemon():
         return self.ID
 
     def set_ID(self, a):
-        self.age = a
+        self.ID = a
     
     def get_pokemon_name(self):
         return self.pokemon_name
