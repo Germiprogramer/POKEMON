@@ -23,5 +23,9 @@ def cambio_pok_1(pokemonentrenador1):
     pokemon_1 = pokemonentrenador1[0]
     return pokemon_1
 
-pokemon_1 = cambio_pok_1(pokemonentrenador1[0])
-print(pokemon_1.ID)
+combate(entrenador1_pokemon1, entrenador2_pokemon2)
+combate(entrenador1_pokemon2, entrenador2_pokemon2)
+
+
+#pokemon_1 = cambio_pok_1(pokemonentrenador1[0])
+#print(pokemon_1.ID)
