@@ -32,6 +32,4 @@ def eficacias(pokemon_1, pokemon_2):
         pokemon_2.set_attack_rating(poder_ataque)
     else:
         pass
-
-
-
+    

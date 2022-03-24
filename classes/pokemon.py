@@ -1,12 +1,13 @@
 
 
 class Pokemon():
-    def __init__(self, ID, pokemon_name, health_points, attack_rating, defense_rating):
+    def __init__(self, ID, pokemon_name, health_points, attack_rating, defense_rating, speed_rating):
         self.ID = ID
         self.pokemon_name = pokemon_name
         self.health_points = health_points
         self.attack_rating = attack_rating
         self.defense_rating = defense_rating
+        self.speed_rating = speed_rating
         
     def get_ID(self):
         return self.ID
@@ -37,4 +38,18 @@ class Pokemon():
 
     def set_defense_rating(self, a):
         self.defense_rating = a
+
+    def get_speed_rating(self):
+        return self.speed_rating
+
+    def set_speed_rating(self, a):
+        self.speed_rating = a
+
+    def attack(self, pokemon_2):
+        ataque = self.attack_rating-(pokemon_2.get_defense_rating()%2)
+        vida = pokemon_2.get_health_points() - ataque
+        print("¡{} usa {}!".format(self.pokemon_name, self.nombre_ataque))
+        print("¡{} ahora tiene {} puntos de vida!".format(pokemon_2.get_pokemon_name(), vida))
+        print("")
+        return pokemon_2.set_health_points(vida)
 
