@@ -13,19 +13,35 @@ entrenador1_pokemon1 = Pokemon_planta(1, "bulbasaur", 50, 8, 10, 9)
 entrenador1_pokemon2= Pokemon_agua(4, "squirtle", 45, 9, 11, 10)
 entrenador2_pokemon1= Pokemon_fuego(7, "charmander", 47, 11, 7, 11)
 entrenador2_pokemon2= Pokemon_electrico(25, "pikachu", 43, 12, 8, 13)
-
+    
 pokemonentrenador1 = [entrenador1_pokemon1, entrenador1_pokemon2]
 pokemonentrenador2 = [entrenador2_pokemon1, entrenador2_pokemon2]
 
-print(pokemonentrenador1[0].ID)
+def combateconcambio(pokemonentrenador1, pokemonentrenador2):
+    i = 0
+    j = 0
 
-def cambio_pok_1(pokemonentrenador1):
-    pokemon_1 = pokemonentrenador1[0]
-    return pokemon_1
+    if i >= len(pokemonentrenador1):
+            pass
+    else:
+        if pokemonentrenador1[i].get_health_points() <0:
+            i = i + 1
+    
+    if j >= len(pokemonentrenador2):
+            pass
+    else:
+        if pokemonentrenador2[j].get_health_points() <0:
+            j = j + 1
 
-combate(entrenador1_pokemon1, entrenador2_pokemon2)
-combate(entrenador1_pokemon2, entrenador2_pokemon2)
-
-
-#pokemon_1 = cambio_pok_1(pokemonentrenador1[0])
-#print(pokemon_1.ID)
+    if pokemonentrenador1[i].get_health_points() >0 and pokemonentrenador2[j].get_health_points()>0:
+        pokemonentrenador1[i].eficacias(pokemonentrenador2[j])
+        pokemonentrenador2[j].eficacias(pokemonentrenador1[i])
+        combate(pokemonentrenador1[i], pokemonentrenador2[j])
+        
+    if pokemonentrenador1[i].get_health_points()>0 or pokemonentrenador2[j].get_health_points()>0:
+        try:
+            combateconcambio(pokemonentrenador1, pokemonentrenador2)
+        except:
+            pass
+    else:
+        pass
