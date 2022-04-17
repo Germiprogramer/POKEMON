@@ -1,5 +1,3 @@
-
-
 class Pokemon():
     def __init__(self, ID, pokemon_name, health_points, attack_rating, defense_rating, speed_rating):
         self.ID = ID

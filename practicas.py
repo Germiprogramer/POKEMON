@@ -4,7 +4,6 @@ from classes.pokemon_electrico import *
 from classes.pokemon_agua import *
 from classes.pokemon_fuego import *
 from combate import *
-from eficacias import *
 
 entrenador1_pokemon1 = Pokemon_planta(1, "bulbasaur", 50, 8, 10, 9)
 entrenador1_pokemon2= Pokemon_agua(4, "squirtle", 45, 9, 11, 10)
@@ -18,17 +17,26 @@ def combateconcambio(pokemonentrenador1, pokemonentrenador2):
     i = 0
     j = 0
 
-    if pokemonentrenador1[i].get_health_points() <0:
-        i = i + 1
-    if pokemonentrenador2[j].get_health_points() <0:
-        j = j + 1
-
-
+    if i >= len(pokemonentrenador1):
+            pass
+    else:
+        if pokemonentrenador1[i].get_health_points() <0:
+            i = i + 1
     
-    pokemonentrenador1[i].eficacias(pokemonentrenador2[j])
-    pokemonentrenador2[j].eficacias(pokemonentrenador1[i])
-    combate(pokemonentrenador1[i], pokemonentrenador2[j])
+    if j >= len(pokemonentrenador2):
+            pass
+    else:
+        if pokemonentrenador2[j].get_health_points() <0:
+            j = j + 1
+
     if pokemonentrenador1[i].get_health_points() >0 and pokemonentrenador2[j].get_health_points()>0:
+        pokemonentrenador1[i].eficacias(pokemonentrenador2[j])
+        pokemonentrenador2[j].eficacias(pokemonentrenador1[i])
+        combate(pokemonentrenador1[i], pokemonentrenador2[j])
+        
+    
+
+    if pokemonentrenador1[i].get_health_points()>0 or pokemonentrenador2[j].get_health_points()>0:
         try:
             combateconcambio(pokemonentrenador1, pokemonentrenador2)
         except:

@@ -6,7 +6,6 @@ from classes.pokemon_electrico import *
 from classes.pokemon_agua import *
 from classes.pokemon_fuego import *
 from combate import *
-from eficacias import *
 
 if __name__ == "__main__":
     
