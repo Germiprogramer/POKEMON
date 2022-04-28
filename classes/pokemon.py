@@ -1,5 +1,5 @@
 class Pokemon():
-    def __init__(self, ID, pokemon_name, type1, type2, health_points, attack_rating, defense_rating, sp_attack_rating, sp_defense_rating, speed_rating):
+    def __init__(self, ID, pokemon_name, type1, type2, health_points, attack_rating, defense_rating, sp_attack_rating, sp_defense_rating, speed_rating, total, image):
         self.ID = ID
         self.pokemon_name = pokemon_name
         self.type1 = type1
@@ -10,6 +10,8 @@ class Pokemon():
         self.sp_attack_rating = sp_attack_rating
         self.sp_defense_rating = sp_defense_rating
         self.speed_rating = speed_rating
+        self.total = total
+        self.image = image
         
     def get_ID(self):
         return self.ID
@@ -22,6 +24,18 @@ class Pokemon():
 
     def set_pokemon_name(self, a):
         self.pokemon_name = a
+    
+    def get_type1(self):
+        return self.type1
+
+    def set_type1(self, a):
+        self.type1 = a
+
+    def get_type2(self):
+        return self.type2
+
+    def set_type2(self, a):
+        self.type2 = a
 
     def get_health_points(self):
         return self.health_points
