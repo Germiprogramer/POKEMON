@@ -24,6 +24,8 @@ class Pokemon():
 
     def set_pokemon_name(self, a):
         self.pokemon_name = a
+
+    
     
     def get_type1(self):
         return self.type1
@@ -55,11 +57,35 @@ class Pokemon():
     def set_defense_rating(self, a):
         self.defense_rating = a
 
+    def get_sp_attack_rating(self):
+        return self.sp_attack_rating
+
+    def set_sp_attack_rating(self, a):
+        self.sp_attack_rating = a
+    
+    def get_sp_defense_rating(self):
+        return self.sp_defense_rating
+
+    def set_sp_defense_rating(self, a):
+        self.sp_defense_rating = a
+
     def get_speed_rating(self):
         return self.speed_rating
 
     def set_speed_rating(self, a):
         self.speed_rating = a
+
+    def get_total(self):
+        return self.total
+
+    def set_total(self, a):
+        self.total = a
+    
+    def get_image(self):
+        return self.image
+
+    def set_image(self, a):
+        self.image = a
 
     def attack(self, pokemon_2):
         ataque = self.attack_rating-(pokemon_2.get_defense_rating()%2)
@@ -69,3 +95,4 @@ class Pokemon():
         print("")
         return pokemon_2.set_health_points(vida)
 
+    
